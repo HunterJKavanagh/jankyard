@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sand beach soil ground shore desert texture ver 3.jpg-6e6c64a4325815c7b107cb607a2fc8f9.stex"
+path="res://.import/wcar.png-5a458c650d95a724bcc33999e5189330.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sand beach soil ground shore desert texture ver 3.jpg"
-dest_files=[ "res://.import/Sand beach soil ground shore desert texture ver 3.jpg-6e6c64a4325815c7b107cb607a2fc8f9.stex" ]
+source_file="res://Assests/wcar.png"
+dest_files=[ "res://.import/wcar.png-5a458c650d95a724bcc33999e5189330.stex" ]
 
 [params]
 
