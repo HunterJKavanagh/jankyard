@@ -48,11 +48,10 @@ rotation = 1.5708
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
-text = "(null,null)"
+text = "(-1,1)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="body_entered" from="DoorU" to="DoorU" method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorU" to="." method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorD" to="." method="_on_DoorD_body_entered"]
 [connection signal="body_entered" from="DoorL" to="." method="_on_DoorL_body_entered"]
