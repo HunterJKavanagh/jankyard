@@ -26,14 +26,31 @@ func _ready():
 	map.add_vertex("level_4", {"path": "res://Scenes/level/levels/level_4.tscn"}) # (0,-1)
 	map.add_vertex("level_5", {"path": "res://Scenes/level/levels/level_5.tscn"}) # (-1, 0)
 	map.add_vertex("level_6", {"path": "res://Scenes/level/levels/level_6.tscn"}) # (1,1)
-	map.add_vertex("level_7", {"path": "res://Scenes/level/levels/level_7.tscn"}) # 3
-	map.add_vertex("level_8", {"path": "res://Scenes/level/levels/level_8.tscn"}) # 1
-	map.add_vertex("level_9", {"path": "res://Scenes/level/levels/level_9.tscn"}) # 7
+	map.add_vertex("level_7", {"path": "res://Scenes/level/levels/level_7.tscn"}) # (1,-1)
+	map.add_vertex("level_8", {"path": "res://Scenes/level/levels/level_8.tscn"}) # (-1,-1)
+	map.add_vertex("level_9", {"path": "res://Scenes/level/levels/level_9.tscn"}) # (-1,1)
 	
+	# (0,0)
 	map.add_edge(lib.DIR.up, "level_1", "level_2")
 	map.add_edge(lib.DIR.right, "level_1", "level_3")
 	map.add_edge(lib.DIR.down, "level_1", "level_4")
 	map.add_edge(lib.DIR.left, "level_1", "level_5")
+	
+	#(0,1)
+	map.add_edge(lib.DIR.right, "level_2", "level_6")
+	map.add_edge(lib.DIR.left, "level_2", "level_9")
+	
+	# (0,-1)
+	map.add_edge(lib.DIR.right, "level_4", "level_7")
+	map.add_edge(lib.DIR.left, "level_4", "level_8")
+	
+	# (1, 0)
+	map.add_edge(lib.DIR.up, "level_3", "level_6")
+	map.add_edge(lib.DIR.down, "level_3", "level_7")
+#
+	# (-1,0)
+	map.add_edge(lib.DIR.up, "level_5", "level_9")
+	map.add_edge(lib.DIR.down, "level_5", "level_8")
 	
 	# settign up level
 	var level = load(map.vertices[level_name].data["path"]).instance()
