@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bpickup.png-4c9a3c0f9e57eabc056f33915e5f2789.stex"
+path="res://.import/download.jpg-39b83c6792f51f7747d8db35d3ec2cbd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/bpickup.png"
-dest_files=[ "res://.import/bpickup.png-4c9a3c0f9e57eabc056f33915e5f2789.stex" ]
+source_file="res://Assests/art/download.jpg"
+dest_files=[ "res://.import/download.jpg-39b83c6792f51f7747d8db35d3ec2cbd.stex" ]
 
 [params]
 

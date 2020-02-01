@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wcar.png-5a458c650d95a724bcc33999e5189330.stex"
+path="res://.import/wcar.png-a7608aa13012a91d0a286aa32a15b52a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/wcar.png"
-dest_files=[ "res://.import/wcar.png-5a458c650d95a724bcc33999e5189330.stex" ]
+source_file="res://Assests/art/wcar.png"
+dest_files=[ "res://.import/wcar.png-a7608aa13012a91d0a286aa32a15b52a.stex" ]
 
 [params]
 

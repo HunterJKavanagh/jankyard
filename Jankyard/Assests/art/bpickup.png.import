@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/redvan.png-b2341309f294744caa8ce995cfa9b694.stex"
+path="res://.import/bpickup.png-4186465824a8f66c09182ffe537331ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/redvan.png"
-dest_files=[ "res://.import/redvan.png-b2341309f294744caa8ce995cfa9b694.stex" ]
+source_file="res://Assests/art/bpickup.png"
+dest_files=[ "res://.import/bpickup.png-4186465824a8f66c09182ffe537331ba.stex" ]
 
 [params]
 

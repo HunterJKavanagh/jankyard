@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/preview_idle.png-a435d6d6ea9d9b7c63189709f5486cb4.stex"
+path="res://.import/redvan.png-72281def5600df1b3e81770868451d91.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/preview_idle.png"
-dest_files=[ "res://.import/preview_idle.png-a435d6d6ea9d9b7c63189709f5486cb4.stex" ]
+source_file="res://Assests/art/redvan.png"
+dest_files=[ "res://.import/redvan.png-72281def5600df1b3e81770868451d91.stex" ]
 
 [params]
 
