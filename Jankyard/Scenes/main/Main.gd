@@ -1,4 +1,3 @@
-tool
 
 extends Node2D
 
@@ -22,10 +21,10 @@ var data: Dictionary = {
 		lib.OBJ.pit: null,
 	},
 	"Collision": {
-		lib.OBJ.test_obj: true,
-		lib.OBJ.glue: true,
-		lib.OBJ.wood: true,
-		lib.OBJ.pit: true,
+		lib.OBJ.test_obj: false,
+		lib.OBJ.glue: false,
+		lib.OBJ.wood: false,
+		lib.OBJ.pit: false,
 	},
 }
 
@@ -63,80 +62,80 @@ func _ready():
 	connect("level_change", self, "on_level_change")
 	
 	# setting up map
-	map.add_vertex(lib.LEVELS.level_1, {"path": "res://Scenes/level/levels/level_1.tscn"})
-	map.add_vertex(lib.LEVELS.level_2, {"path": "res://Scenes/level/levels/level_2.tscn"})
-	map.add_vertex(lib.LEVELS.level_3, {"path": "res://Scenes/level/levels/level_3.tscn"})
-	map.add_vertex(lib.LEVELS.level_4, {"path": "res://Scenes/level/levels/level_4.tscn"})
-	map.add_vertex(lib.LEVELS.level_5, {"path": "res://Scenes/level/levels/level_5.tscn"})
-	map.add_vertex(lib.LEVELS.level_6, {"path": "res://Scenes/level/levels/level_6.tscn"})
-	map.add_vertex(lib.LEVELS.level_7, {"path": "res://Scenes/level/levels/level_7.tscn"})
-	map.add_vertex(lib.LEVELS.level_8, {"path": "res://Scenes/level/levels/level_8.tscn"})
-	map.add_vertex(lib.LEVELS.level_9, {"path": "res://Scenes/level/levels/level_9.tscn"})
+	map.add_vertex(lib.LEVELS.level_1, {"path": "res://Scenes/level/levels/level_1.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_2, {"path": "res://Scenes/level/levels/level_2.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_3, {"path": "res://Scenes/level/levels/level_3.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_4, {"path": "res://Scenes/level/levels/level_4.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_5, {"path": "res://Scenes/level/levels/level_5.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_6, {"path": "res://Scenes/level/levels/level_6.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_7, {"path": "res://Scenes/level/levels/level_7.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_8, {"path": "res://Scenes/level/levels/level_8.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.level_9, {"path": "res://Scenes/level/levels/level_9.tscn", "save": null})
 	
 #setting up rooms
 #pog
-	map.add_vertex(lib.LEVELS.hub, {"path": "res://Scenes/level/levels/hub.tscn"})
-	map.add_vertex(lib.LEVELS.first_bridge, {"path": "res://Scenes/level/levels/first_bridge.tscn"})
-	map.add_vertex(lib.LEVELS.first_ramp, {"path": "res://Scenes/level/levels/first_ramp.tscn"})
-	map.add_vertex(lib.LEVELS.conveyor, {"path": "res://Scenes/level/levels/conveyor.tscn"})
-	map.add_vertex(lib.LEVELS.walkie, {"path": "res://Scenes/level/levels/walkie.tscn"})
-	map.add_vertex(lib.LEVELS.cog_1, {"path": "res://Scenes/level/levels/cog_1.tscn"})
-	map.add_vertex(lib.LEVELS.cog_2, {"path": "res://Scenes/level/levels/cog_2.tscn"})
-	map.add_vertex(lib.LEVELS.cog_3, {"path": "res://Scenes/level/levels/cog_3.tscn"})
-	map.add_vertex(lib.LEVELS.cog_4, {"path": "res://Scenes/level/levels/cog_4.tscn"})
-	map.add_vertex(lib.LEVELS.plant, {"path": "res://Scenes/level/levels/plant.tscn"})
-	map.add_vertex(lib.LEVELS.con, {"path": "res://Scenes/level/levels/con_1.tscn"})
+	map.add_vertex(lib.LEVELS.hub, {"path": "res://Scenes/level/levels/hub.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.first_bridge, {"path": "res://Scenes/level/levels/first_bridge.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.first_ramp, {"path": "res://Scenes/level/levels/first_ramp.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.conveyor, {"path": "res://Scenes/level/levels/conveyor.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.walkie, {"path": "res://Scenes/level/levels/walkie.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.cog_1, {"path": "res://Scenes/level/levels/cog_1.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.cog_2, {"path": "res://Scenes/level/levels/cog_2.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.cog_3, {"path": "res://Scenes/level/levels/cog_3.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.cog_4, {"path": "res://Scenes/level/levels/cog_4.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.plant, {"path": "res://Scenes/level/levels/plant.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.con, {"path": "res://Scenes/level/levels/con_1.tscn", "save": null})
 #plants
-	map.add_vertex(lib.LEVELS.garbo, {"path": "res://Scenes/level/levels/garbo.tscn"})
-	map.add_vertex(lib.LEVELS.planto, {"path": "res://Scenes/level/levels/planto.tscn"})
-	map.add_vertex(lib.LEVELS.saw, {"path": "res://Scenes/level/levels/saw.tscn"})
-	map.add_vertex(lib.LEVELS.stakes, {"path": "res://Scenes/level/levels/stakes.tscn"})
-	map.add_vertex(lib.LEVELS.tree, {"path": "res://Scenes/level/levels/tree.tscn"})
-	map.add_vertex(lib.LEVELS.stake_2, {"path": "res://Scenes/level/levels/stake_2.tscn"})
-	map.add_vertex(lib.LEVELS.walls, {"path": "res://Scenes/level/levels/walls.tscn"})
-	map.add_vertex(lib.LEVELS.succ_2, {"path": "res://Scenes/level/levels/succ_2.tscn"})
-	map.add_vertex(lib.LEVELS.orotto, {"path": "res://Scenes/level/levels/orotto.tscn"})
-	map.add_vertex(lib.LEVELS.stake_3, {"path": "res://Scenes/level/levels/stake_3.tscn"})
-	map.add_vertex(lib.LEVELS.roboto, {"path": "res://Scenes/level/levels/roboto.tscn"})
+	map.add_vertex(lib.LEVELS.garbo, {"path": "res://Scenes/level/levels/garbo.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.planto, {"path": "res://Scenes/level/levels/planto.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.saw, {"path": "res://Scenes/level/levels/saw.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.stakes, {"path": "res://Scenes/level/levels/stakes.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.tree, {"path": "res://Scenes/level/levels/tree.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.stake_2, {"path": "res://Scenes/level/levels/stake_2.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.walls, {"path": "res://Scenes/level/levels/walls.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.succ_2, {"path": "res://Scenes/level/levels/succ_2.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.orotto, {"path": "res://Scenes/level/levels/orotto.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.stake_3, {"path": "res://Scenes/level/levels/stake_3.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.roboto, {"path": "res://Scenes/level/levels/roboto.tscn", "save": null})
 #robots
-	map.add_vertex(lib.LEVELS.bot, {"path": "res://Scenes/level/levels/bot.tscn"})
-	map.add_vertex(lib.LEVELS.borken, {"path": "res://Scenes/level/levels/borken.tscn"})
-	map.add_vertex(lib.LEVELS.feel_alive, {"path": "res://Scenes/level/levels/feel_alive.tscn"})
-	map.add_vertex(lib.LEVELS.pogchamp, {"path": "res://Scenes/level/levels/pogchamp.tscn"})
+	map.add_vertex(lib.LEVELS.bot, {"path": "res://Scenes/level/levels/bot.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.borken, {"path": "res://Scenes/level/levels/borken.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.feel_alive, {"path": "res://Scenes/level/levels/feel_alive.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.pogchamp, {"path": "res://Scenes/level/levels/pogchamp.tscn", "save": null})
 #Cars
-	map.add_vertex(lib.LEVELS.scrapmobile, {"path": "res://Scenes/level/levels/scrapmobile.tscn"})
-	map.add_vertex(lib.LEVELS.speaker, {"path": "res://Scenes/level/levels/speaker.tscn"})
-	map.add_vertex(lib.LEVELS.succ, {"path": "res://Scenes/level/levels/succ.tscn"})
-	map.add_vertex(lib.LEVELS.whistling_jackhammer, {"path": "res://Scenes/level/levels/whistling_jackhammer.tscn"})
-	map.add_vertex(lib.LEVELS.succor, {"path": "res://Scenes/level/levels/succor.tscn"})
-	map.add_vertex(lib.LEVELS.why, {"path": "res://Scenes/level/levels/why.tscn"})
-	map.add_vertex(lib.LEVELS.gardener, {"path": "res://Scenes/level/levels/gardener.tscn"})
+	map.add_vertex(lib.LEVELS.scrapmobile, {"path": "res://Scenes/level/levels/scrapmobile.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.speaker, {"path": "res://Scenes/level/levels/speaker.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.succ, {"path": "res://Scenes/level/levels/succ.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.whistling_jackhammer, {"path": "res://Scenes/level/levels/whistling_jackhammer.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.succor, {"path": "res://Scenes/level/levels/succor.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.why, {"path": "res://Scenes/level/levels/why.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.gardener, {"path": "res://Scenes/level/levels/gardener.tscn", "save": null})
 #sinkhole
-	map.add_vertex(lib.LEVELS.dirk, {"path": "res://Scenes/level/levels/dirk.tscn"})
-	map.add_vertex(lib.LEVELS.sink, {"path": "res://Scenes/level/levels/sink.tscn"})
+	map.add_vertex(lib.LEVELS.dirk, {"path": "res://Scenes/level/levels/dirk.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.sink, {"path": "res://Scenes/level/levels/sink.tscn", "save": null})
 #construction
-	map.add_vertex(lib.LEVELS.minecraft_construction_area, {"path": "res://Scenes/level/levels/minecraft_construction_area.tscn"})
-	map.add_vertex(lib.LEVELS.infinity, {"path": "res://Scenes/level/levels/infinity.tscn"})
-	map.add_vertex(lib.LEVELS.reck, {"path": "res://Scenes/level/levels/reck.tscn"})
-	map.add_vertex(lib.LEVELS.placeholder, {"path": "res://Scenes/level/levels/placeholder.tscn"})
-	map.add_vertex(lib.LEVELS.garbage, {"path": "res://Scenes/level/levels/garbage.tscn"})
-	map.add_vertex(lib.LEVELS.magneto, {"path": "res://Scenes/level/levels/magneto.tscn"})
-	map.add_vertex(lib.LEVELS.mixer, {"path": "res://Scenes/level/levels/mixer.tscn"})
-	map.add_vertex(lib.LEVELS.gemeni, {"path": "res://Scenes/level/levels/gemeni.tscn"})
-	map.add_vertex(lib.LEVELS.ralph, {"path": "res://Scenes/level/levels/ralph.tscn"})
-	map.add_vertex(lib.LEVELS.welding, {"path": "res://Scenes/level/levels/welding.tscn"})
-	map.add_vertex(lib.LEVELS.byeah, {"path": "res://Scenes/level/levels/byeah.tscn"})
+	map.add_vertex(lib.LEVELS.minecraft_construction_area, {"path": "res://Scenes/level/levels/minecraft_construction_area.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.infinity, {"path": "res://Scenes/level/levels/infinity.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.reck, {"path": "res://Scenes/level/levels/reck.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.placeholder, {"path": "res://Scenes/level/levels/placeholder.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.garbage, {"path": "res://Scenes/level/levels/garbage.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.magneto, {"path": "res://Scenes/level/levels/magneto.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.mixer, {"path": "res://Scenes/level/levels/mixer.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.gemeni, {"path": "res://Scenes/level/levels/gemeni.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.ralph, {"path": "res://Scenes/level/levels/ralph.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.welding, {"path": "res://Scenes/level/levels/welding.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.byeah, {"path": "res://Scenes/level/levels/byeah.tscn", "save": null})
 #incinerator
-	map.add_vertex(lib.LEVELS.warm, {"path": "res://Scenes/level/levels/warm.tscn"})
-	map.add_vertex(lib.LEVELS.backwards, {"path": "res://Scenes/level/levels/backwards.tscn"})
-	map.add_vertex(lib.LEVELS.succ_3, {"path": "res://Scenes/level/levels/succ_3.tscn"})
-	map.add_vertex(lib.LEVELS.incins_big_win, {"path": "res://Scenes/level/levels/incins_big_win.tscn"})
-	map.add_vertex(lib.LEVELS.incin_1, {"path": "res://Scenes/level/levels/incin_1.tscn"})
-	map.add_vertex(lib.LEVELS.incin_2, {"path": "res://Scenes/level/levels/incin_2.tscn"})
-	map.add_vertex(lib.LEVELS.incin_3, {"path": "res://Scenes/level/levels/incin_3.tscn"})
-	map.add_vertex(lib.LEVELS.incin_4, {"path": "res://Scenes/level/levels/incin_4.tscn"})
-	map.add_vertex(lib.LEVELS.papier, {"path": "res://Scenes/level/levels/papier.tscn"})
-	map.add_vertex(lib.LEVELS.alternia, {"path": "res://Scenes/level/levels/alternia.tscn"})
+	map.add_vertex(lib.LEVELS.warm, {"path": "res://Scenes/level/levels/warm.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.backwards, {"path": "res://Scenes/level/levels/backwards.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.succ_3, {"path": "res://Scenes/level/levels/succ_3.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.incins_big_win, {"path": "res://Scenes/level/levels/incins_big_win.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.incin_1, {"path": "res://Scenes/level/levels/incin_1.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.incin_2, {"path": "res://Scenes/level/levels/incin_2.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.incin_3, {"path": "res://Scenes/level/levels/incin_3.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.incin_4, {"path": "res://Scenes/level/levels/incin_4.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.papier, {"path": "res://Scenes/level/levels/papier.tscn", "save": null})
+	map.add_vertex(lib.LEVELS.alternia, {"path": "res://Scenes/level/levels/alternia.tscn", "save": null})
 	
 #room connections
 
@@ -385,6 +384,9 @@ func on_level_change(dir):
 			$Player.position = player_postions[lib.DIR.right]
 
 func on_level_door_entered(dir):
+	
+	map.vertices[level_name].data["save"] = level
+	
 	match dir:
 		lib.DIR.up:
 			if map.vertices[level_name].data["door_data"][dir]:
@@ -404,7 +406,11 @@ func on_level_door_entered(dir):
 			if map.vertices[level_name].data["door_data"][dir]:
 				level_name = map.vertices[level_name].connections[lib.DIR.down]
 				remove_child(level)
-				level = load(map.vertices[level_name].data["path"]).instance()
+				if map.vertices[level_name].data["save"] != null:
+					var tmp_level = map.vertices[level_name].data["save"]
+					level = map.vertices[level_name].data["save"]
+				else:
+					level = load(map.vertices[level_name].data["path"]).instance()
 				add_child(level)
 				emit_signal("level_change", dir)
 		lib.DIR.left:
@@ -414,6 +420,7 @@ func on_level_door_entered(dir):
 				level = load(map.vertices[level_name].data["path"]).instance()
 				add_child(level)
 				emit_signal("level_change", dir)
+	map.vertices[level_name].data["save"] = level
 	connect_obj(level)
 	$Characters.move_characters(level_name)
 
@@ -450,6 +457,7 @@ func on_obj_clicked(obj_type, l_r, obj):
 					obj.get_node("CollisionShape2D").disabled = true
 					obj.get_node("AnimatedSprite").play("fixed")
 					print(obj.get_node("CollisionShape2D").disabled)
+					data["Collision"][lib.OBJ.pit] = true
 			if l_r == lib.RIGHT:
 				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
 
