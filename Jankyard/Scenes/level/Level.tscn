@@ -52,8 +52,8 @@ text = "(null,null)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="body_entered" from="DoorU" to="DoorU" method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorU" to="." method="_on_DoorU_body_entered"]
+[connection signal="body_entered" from="DoorU" to="DoorU" method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorD" to="." method="_on_DoorD_body_entered"]
 [connection signal="body_entered" from="DoorL" to="." method="_on_DoorL_body_entered"]
 [connection signal="body_entered" from="DoorR" to="." method="_on_DoorR_body_entered"]
