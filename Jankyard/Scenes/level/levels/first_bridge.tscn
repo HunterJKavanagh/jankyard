@@ -1,21 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assests/art/backgrounds/POG_leftright_path.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/level/IWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/level/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/level/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/objects/TestObj.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/objects/Pit_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/objects/Pit_cross.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Floor" type="Sprite" parent="."]
-position = Vector2( 463.653, 381 )
 texture = ExtResource( 1 )
 centered = false
-offset = Vector2( -554.161, -396.736 )
 
 [node name="IWallL" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 300 )
@@ -52,13 +49,7 @@ __meta__ = {
 [node name="TestObj" parent="." instance=ExtResource( 5 )]
 position = Vector2( 59.1758, 89.1057 )
 
-[node name="Pit3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 779.194, 232.122 )
-
-[node name="Pit4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 166.452, 232.122 )
-
 [node name="Pit" parent="." instance=ExtResource( 7 )]
-position = Vector2( 473.13, 231.579 )
+position = Vector2( 512, 300 )
 [connection signal="body_entered" from="DoorU" to="." method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorD" to="." method="_on_DoorD_body_entered"]
