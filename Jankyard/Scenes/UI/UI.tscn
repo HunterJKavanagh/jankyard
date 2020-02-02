@@ -262,6 +262,17 @@ text = "Item 5"
 [connection signal="pressed" from="InventoryButton" to="." method="_on_InventoryButton_pressed"]
 [connection signal="pressed" from="ToolBox/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Dialog/PlayerDialogPanel/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool1" to="." method="_on_Tool1_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool2" to="." method="_on_Tool2_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool3" to="." method="_on_Tool3_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool4" to="." method="_on_Tool4_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool5" to="." method="_on_Tool5_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool6" to="." method="_on_Tool6_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item1" to="." method="_on_Item1_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item2" to="." method="_on_Item2_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item3" to="." method="_on_Item3_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item4" to="." method="_on_Item4_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item5" to="." method="_on_Item5_pressed"]
 
 [editable path="ToolBox"]
 

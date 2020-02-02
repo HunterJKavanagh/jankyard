@@ -352,6 +352,7 @@ func _ready():
 	
 	$Characters.connect("character_clicked", self, "on_character_clicked")
 	$UI/UI.connect("continue_dialog_pressed", self, "on_continue_dialog_pressed")
+	$UI/UI.connect("tool_button_pressed", self, "on_tool_button_pressed")
 	
 	print("ready")
 	
@@ -367,8 +368,6 @@ func on_level_change(dir):
 			$Player.position = player_postions[lib.DIR.right]
 
 func on_level_door_entered(dir):
-	print(dir)
-	
 	match dir:
 		lib.DIR.up:
 			if map.vertices[level_name].data["door_data"][dir]:
@@ -412,10 +411,13 @@ func connect_obj(level):
 func on_obj_cliked(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_LEFT:
-			print("left_click")
+			print("Left click with TOOL: " + $Player.selected_tool as String)
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_RIGHT:
-			print("right_click")
+			print("Right click with TOOL: " + $Player.selected_tool as String)
+
+func on_tool_button_pressed(tool_type):
+	$Player.selected_tool = tool_type
 
 func on_character_clicked(character):
 	current_character = character
