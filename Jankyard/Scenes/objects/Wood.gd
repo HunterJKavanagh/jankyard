@@ -10,7 +10,7 @@ func _ready():
 func _on_Wood_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_LEFT:
-			emit_signal("obj_clicked", self.get_meta("obj"), lib.LEFT)
+			emit_signal("obj_clicked", self.get_meta("obj"), lib.LEFT, self)
 			self.queue_free()
 		if event.pressed and event.button_index == BUTTON_RIGHT:
-			emit_signal("obj_clicked", self.get_meta("obj"), lib.RIGHT)
+			emit_signal("obj_clicked", self.get_meta("obj"), lib.RIGHT, self)

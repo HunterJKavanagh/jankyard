@@ -56,6 +56,7 @@ margin_bottom = 40.0
 margin_bottom = 40.0
 
 [node name="Dialog" parent="." instance=ExtResource( 4 )]
+visible = false
 margin_left = 4.53315
 margin_top = -1.19092
 margin_right = 4.5332

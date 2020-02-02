@@ -407,8 +407,8 @@ func connect_obj(level):
 		if o.has_meta("obj"):
 			o.connect("obj_clicked", self, "on_obj_clicked")
 
-func on_obj_clicked(obj, l_r, data_1):
-	match obj:
+func on_obj_clicked(obj_type, l_r, obj):
+	match obj_type:
 		lib.OBJ.test_obj:
 			if l_r == lib.LEFT:
 				print("Left Cliked: " + "Test Obj " + "With: " + $Player.selected_tool as String)
@@ -430,7 +430,8 @@ func on_obj_clicked(obj, l_r, data_1):
 			if l_r == lib.LEFT:
 				print("Left Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
 				if $Player.selected_tool == lib.ITEMS.wood:
-					data_1.get_node("CollisionShape2D").disabled = false
+					obj.get_node("CollisionShape2D").disabled = true
+					print(obj.get_node("CollisionShape2D").disabled)
 			if l_r == lib.RIGHT:
 				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
 
