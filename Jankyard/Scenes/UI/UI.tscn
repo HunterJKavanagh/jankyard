@@ -20,6 +20,16 @@ margin_bottom = 20.0
 rect_scale = Vector2( 0.996281, 1 )
 text = "ToolBox"
 
+[node name="InventoryButton" type="Button" parent="."]
+margin_left = 869.333
+margin_top = 0.39381
+margin_right = 942.333
+margin_bottom = 20.3938
+text = "Inventory"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ToolBox" parent="." instance=ExtResource( 2 )]
 visible = false
 margin_left = 58.9722
@@ -112,7 +122,144 @@ margin_right = 42.0
 [node name="No" parent="Dialog/PlayerDialogPanel/VBoxContainer/HBoxContainer" index="1"]
 margin_left = 46.0
 margin_right = 88.0
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+margin_left = 753.464
+margin_top = 49.64
+margin_right = 873.464
+margin_bottom = 379.64
+rect_min_size = Vector2( 120, 330 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Inventory"]
+margin_right = 120.0
+margin_bottom = 330.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel"]
+margin_right = 120.0
+margin_bottom = 300.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Label" parent="Inventory/Panel/VBoxContainer"]
+margin_right = 120.0
+margin_bottom = 14.0
+text = "Inventory"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 18.0
+margin_right = 120.0
+margin_bottom = 22.0
+
+[node name="Tools" type="Label" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 26.0
+margin_right = 120.0
+margin_bottom = 40.0
+text = "Tools"
+align = 1
+
+[node name="Tool1" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 44.0
+margin_right = 120.0
+margin_bottom = 64.0
+toggle_mode = true
+text = "Tool 1"
+
+[node name="Tool2" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 68.0
+margin_right = 120.0
+margin_bottom = 88.0
+toggle_mode = true
+text = "Tool 2"
+
+[node name="Tool3" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 92.0
+margin_right = 120.0
+margin_bottom = 112.0
+toggle_mode = true
+text = "Tool 3"
+
+[node name="Tool4" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 116.0
+margin_right = 120.0
+margin_bottom = 136.0
+toggle_mode = true
+text = "Tool 4"
+
+[node name="Tool5" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 140.0
+margin_right = 120.0
+margin_bottom = 160.0
+toggle_mode = true
+text = "Tool 5"
+
+[node name="Tool6" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 164.0
+margin_right = 120.0
+margin_bottom = 184.0
+toggle_mode = true
+text = "Tool 6"
+
+[node name="HSeparator2" type="HSeparator" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 188.0
+margin_right = 120.0
+margin_bottom = 192.0
+
+[node name="Items" type="Label" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 196.0
+margin_right = 120.0
+margin_bottom = 210.0
+text = "Items"
+align = 1
+
+[node name="Item1" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 214.0
+margin_right = 120.0
+margin_bottom = 234.0
+toggle_mode = true
+text = "Item 1"
+
+[node name="Item2" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 238.0
+margin_right = 120.0
+margin_bottom = 258.0
+toggle_mode = true
+text = "Item 2"
+
+[node name="Item3" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 262.0
+margin_right = 120.0
+margin_bottom = 282.0
+toggle_mode = true
+text = "Item 3"
+
+[node name="Item4" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 286.0
+margin_right = 120.0
+margin_bottom = 306.0
+toggle_mode = true
+text = "Item 4"
+
+[node name="Item5" type="Button" parent="Inventory/Panel/VBoxContainer"]
+margin_top = 310.0
+margin_right = 120.0
+margin_bottom = 330.0
+toggle_mode = true
+text = "Item 5"
 [connection signal="pressed" from="ToolBoxButton" to="." method="_on_ToolBoxButton_pressed"]
+[connection signal="pressed" from="InventoryButton" to="." method="_on_InventoryButton_pressed"]
 [connection signal="pressed" from="ToolBox/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Dialog/PlayerDialogPanel/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
 

@@ -347,6 +347,7 @@ func _ready():
 	# settign up level
 	var level = load(map.vertices[level_name].data["path"]).instance()
 	add_child(level)
+	connect_obj(level)
 	level.connect("door_entered", self, "on_level_door_entered")
 	
 	$Characters.connect("character_clicked", self, "on_character_clicked")
@@ -397,7 +398,24 @@ func on_level_door_entered(dir):
 				level = load(map.vertices[level_name].data["path"]).instance()
 				add_child(level)
 				emit_signal("level_change", dir)
+	connect_obj(level)
 	$Characters.move_characters(level_name)
+
+
+func connect_obj(level):
+	var objs = level.get_children()
+	for o in objs:
+		if o.has_meta("obj"):
+			if o.get_meta("obj") == lib.OBJ.test_obj:
+				o.connect("input_event", self, "on_obj_cliked")
+
+func on_obj_cliked(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == BUTTON_LEFT:
+			print("left_click")
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == BUTTON_RIGHT:
+			print("right_click")
 
 func on_character_clicked(character):
 	current_character = character

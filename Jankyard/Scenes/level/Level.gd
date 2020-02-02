@@ -5,7 +5,7 @@ const lib = preload("res://Lib.gd")
 signal door_entered
 
 func _ready():
-	pass
+	self.set_meta("level", true)
 
 func _on_DoorU_body_entered(body):
 	emit_signal("door_entered", lib.DIR.up)
