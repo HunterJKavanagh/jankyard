@@ -11,12 +11,33 @@ var map: lib.Graph = lib.Graph.new()
 var level_name = "level_1"
 var level
 
+var current_character
+
 var player_postions: Dictionary = {
 		lib.DIR.up: Vector2(512, 30),
 		lib.DIR.right: Vector2(994, 300),
 		lib.DIR.down: Vector2(512, 570),
 		lib.DIR.left: Vector2(30, 300),
 		}
+
+var dialog_counter: Dictionary = {
+	lib.CHARACTERS.test_character: {
+		"line": 0,
+		"level": 0,
+	},
+	lib.CHARACTERS.broken_robot_1: {
+		"line": 0,
+		"level": 0,
+	},
+	lib.CHARACTERS.broken_robot_2: {
+		"line": 0,
+		"level": 0,
+	},
+	lib.CHARACTERS.broken_robot_3: {
+		"line": 0,
+		"level": 0,
+	},
+}
 
 func _ready():
 	# setting up map
@@ -57,6 +78,10 @@ func _ready():
 	add_child(level)
 	level.connect("door_entered", self, "on_level_door_entered")
 	
+	level.connect("character_clicked", self, "on_character_clicked")
+	
+	$"../UI".connect("continue_dialog_pressed", self, "on_continue_dialog_pressed")
+	
 	print("ready")
 
 func on_level_door_entered(dir):
@@ -91,3 +116,21 @@ func on_level_door_entered(dir):
 				level = load(map.vertices[level_name].data["path"]).instance()
 				add_child(level)
 				emit_signal("level_change", dir)
+
+func on_character_clicked(character):
+	$"../UI/Dialog".visible = true
+	
+	current_character = character
+	match character:
+		lib.CHARACTERS.test_character:
+			var line = dialog_counter[character]["line"]
+			$"../UI/Dialog/CharacterDialogPanel/RichTextLabel".text = lib.DATA["dialog"][character][dialog_counter[character]["level"]][line]
+
+func on_continue_dialog_pressed():
+	var line = dialog_counter[current_character]["line"]
+	
+	if line + 1 < lib.DATA["dialog"][current_character][dialog_counter[current_character]["level"]].size():
+		dialog_counter[current_character]["line"] = line + 1
+	
+	$"../UI/Dialog/CharacterDialogPanel/RichTextLabel".text = lib.DATA["dialog"][current_character][dialog_counter[current_character]["level"]][line]
+		

@@ -1,45 +1,55 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assests/art/download.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/Toolbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/UI.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/UI/Dialog.tscn" type="PackedScene" id=4]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="P1" type="Panel" parent="."]
-margin_top = 424.0
-margin_right = 118.0
-margin_bottom = 599.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ToolBoxButton" type="Button" parent="."]
+margin_left = 950.0
+margin_right = 1013.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.996281, 1 )
+text = "ToolBox"
 
-[node name="CharacterPhoto" type="TextureRect" parent="P1"]
-margin_left = 7.26508
-margin_top = 5.40393
-margin_right = 421.265
-margin_bottom = 657.404
-rect_scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ToolBox" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 58.9722
+margin_top = 122.218
+margin_right = -52.0278
+margin_bottom = -244.782
 
-[node name="P2" type="Panel" parent="."]
-margin_left = 661.593
-margin_top = 468.067
-margin_right = 901.593
-margin_bottom = 593.067
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Tool" parent="ToolBox/HBoxContainer" index="0"]
+margin_bottom = 40.0
 
-[node name="TextBox" type="RichTextLabel" parent="P2"]
-margin_right = 239.0
-margin_bottom = 125.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Tool2" parent="ToolBox/HBoxContainer" index="1"]
+margin_bottom = 40.0
+
+[node name="Tool3" parent="ToolBox/HBoxContainer" index="2"]
+margin_bottom = 40.0
+
+[node name="Tool4" parent="ToolBox/HBoxContainer" index="3"]
+margin_bottom = 40.0
+
+[node name="Tool5" parent="ToolBox/HBoxContainer" index="4"]
+margin_bottom = 40.0
+
+[node name="Tool6" parent="ToolBox/HBoxContainer" index="5"]
+margin_bottom = 40.0
+
+[node name="Dialog" parent="." instance=ExtResource( 4 )]
+visible = false
+[connection signal="pressed" from="ToolBoxButton" to="." method="_on_ToolBoxButton_pressed"]
+[connection signal="pressed" from="ToolBox/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Dialog/PlayerDialogPanel/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+
+[editable path="ToolBox"]
+
+[editable path="Dialog"]
