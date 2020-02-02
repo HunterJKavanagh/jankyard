@@ -8,7 +8,7 @@ signal level_change
 
 var map: lib.Graph = lib.Graph.new()
 
-var level_name = lib.LEVELS.level_1
+var level_name = lib.LEVELS.hub
 var level
 var current_character
 
@@ -56,7 +56,7 @@ func _ready():
 	map.add_vertex(lib.LEVELS.level_8, {"path": "res://Scenes/level/levels/level_8.tscn"})
 	map.add_vertex(lib.LEVELS.level_9, {"path": "res://Scenes/level/levels/level_9.tscn"})
 	
-	#setting up rooms
+#setting up rooms
 #pog
 	map.add_vertex(lib.LEVELS.hub, {"path": "res://Scenes/level/levels/hub.tscn"})
 	map.add_vertex(lib.LEVELS.first_bridge, {"path": "res://Scenes/level/levels/first_bridge.tscn"})
@@ -68,7 +68,7 @@ func _ready():
 	map.add_vertex(lib.LEVELS.cog_3, {"path": "res://Scenes/level/levels/cog_3.tscn"})
 	map.add_vertex(lib.LEVELS.cog_4, {"path": "res://Scenes/level/levels/cog_4.tscn"})
 	map.add_vertex(lib.LEVELS.plant, {"path": "res://Scenes/level/levels/plant.tscn"})
-	map.add_vertex(lib.LEVELS.con, {"path": "res://Scenes/level/levels/con.tscn"})
+	map.add_vertex(lib.LEVELS.con, {"path": "res://Scenes/level/levels/con_1.tscn"})
 #plants
 	map.add_vertex(lib.LEVELS.garbo, {"path": "res://Scenes/level/levels/garbo.tscn"})
 	map.add_vertex(lib.LEVELS.planto, {"path": "res://Scenes/level/levels/planto.tscn"})
@@ -120,6 +120,205 @@ func _ready():
 	map.add_vertex(lib.LEVELS.incin_4, {"path": "res://Scenes/level/levels/incin_4.tscn"})
 	map.add_vertex(lib.LEVELS.papier, {"path": "res://Scenes/level/levels/papier.tscn"})
 	map.add_vertex(lib.LEVELS.alternia, {"path": "res://Scenes/level/levels/alternia.tscn"})
+	
+#room connections
+
+#pog
+
+#hub
+	map.add_edge(lib.DIR.left, lib.LEVELS.hub, lib.LEVELS.scrapmobile)
+	map.add_edge(lib.DIR.down, lib.LEVELS.hub, lib.LEVELS.first_bridge)
+	map.add_edge(lib.DIR.right, lib.LEVELS.hub, lib.LEVELS.cog_1)
+#first_bridge
+	map.add_edge(lib.DIR.up, lib.LEVELS.first_bridge, lib.LEVELS.hub)
+	map.add_edge(lib.DIR.down, lib.LEVELS.first_bridge, lib.LEVELS.first_ramp)
+#first_ramp
+	map.add_edge(lib.DIR.up, lib.LEVELS.first_ramp, lib.LEVELS.first_bridge)
+	map.add_edge(lib.DIR.right, lib.LEVELS.first_ramp, lib.LEVELS.conveyor)
+#conveyor
+	map.add_edge(lib.DIR.left, lib.LEVELS.conveyor, lib.LEVELS.first_ramp)
+	map.add_edge(lib.DIR.up, lib.LEVELS.conveyor, lib.LEVELS.walkie)
+	map.add_edge(lib.DIR.down, lib.LEVELS.conveyor, lib.LEVELS.warm)
+#walkie
+	map.add_edge(lib.DIR.down, lib.LEVELS.walkie, lib.LEVELS.conveyor)
+	map.add_edge(lib.DIR.right, lib.LEVELS.walkie, lib.LEVELS.con)
+	map.add_edge(lib.DIR.up, lib.LEVELS.walkie, lib.LEVELS.cog_1)
+#cog_1
+	map.add_edge(lib.DIR.left, lib.LEVELS.cog_1, lib.LEVELS.hub)
+	map.add_edge(lib.DIR.down, lib.LEVELS.cog_1, lib.LEVELS.walkie)
+	map.add_edge(lib.DIR.right, lib.LEVELS.cog_1, lib.LEVELS.cog_2)
+	map.add_edge(lib.DIR.up, lib.LEVELS.cog_1, lib.LEVELS.cog_4)
+#cog_2
+	map.add_edge(lib.DIR.left, lib.LEVELS.cog_2, lib.LEVELS.cog_1)
+	map.add_edge(lib.DIR.up, lib.LEVELS.cog_2, lib.LEVELS.cog_3)
+#cog_3
+	map.add_edge(lib.DIR.left, lib.LEVELS.cog_3, lib.LEVELS.cog_4)
+	map.add_edge(lib.DIR.down, lib.LEVELS.cog_3, lib.LEVELS.cog_2)
+	map.add_edge(lib.DIR.right, lib.LEVELS.cog_3, lib.LEVELS.pogchamp)
+#cog_4
+	map.add_edge(lib.DIR.left, lib.LEVELS.cog_4, lib.LEVELS.plant)
+	map.add_edge(lib.DIR.down, lib.LEVELS.cog_4, lib.LEVELS.cog_1)
+	map.add_edge(lib.DIR.right, lib.LEVELS.cog_4, lib.LEVELS.cog_3)
+#plant
+	map.add_edge(lib.DIR.up, lib.LEVELS.plant, lib.LEVELS.garbo)
+	map.add_edge(lib.DIR.right, lib.LEVELS.plant, lib.LEVELS.cog_4)
+#con
+	map.add_edge(lib.DIR.left, lib.LEVELS.con, lib.LEVELS.walkie)
+	map.add_edge(lib.DIR.right, lib.LEVELS.con, lib.LEVELS.byeah)
+
+#plants
+
+#garbo
+	map.add_edge(lib.DIR.down, lib.LEVELS.garbo, lib.LEVELS.plant)
+	map.add_edge(lib.DIR.right, lib.LEVELS.garbo, lib.LEVELS.planto)
+	map.add_edge(lib.DIR.up, lib.LEVELS.garbo, lib.LEVELS.stake_2)
+#planto
+	map.add_edge(lib.DIR.left, lib.LEVELS.planto, lib.LEVELS.garbo)
+	map.add_edge(lib.DIR.right, lib.LEVELS.planto, lib.LEVELS.saw)
+#saw
+	map.add_edge(lib.DIR.left, lib.LEVELS.saw, lib.LEVELS.planto)
+	map.add_edge(lib.DIR.up, lib.LEVELS.saw, lib.LEVELS.stakes)
+#stakes
+	map.add_edge(lib.DIR.down, lib.LEVELS.stakes, lib.LEVELS.saw)
+	map.add_edge(lib.DIR.left, lib.LEVELS.stakes, lib.LEVELS.tree)
+#tree
+	map.add_edge(lib.DIR.left, lib.LEVELS.tree, lib.LEVELS.stake_2)
+	map.add_edge(lib.DIR.up, lib.LEVELS.tree, lib.LEVELS.stake_3)
+	map.add_edge(lib.DIR.right, lib.LEVELS.tree, lib.LEVELS.stakes)
+#stake_2
+	map.add_edge(lib.DIR.down, lib.LEVELS.stake_2, lib.LEVELS.garbo)
+	map.add_edge(lib.DIR.right, lib.LEVELS.stake_2, lib.LEVELS.tree)
+	map.add_edge(lib.DIR.up, lib.LEVELS.stake_2, lib.LEVELS.walls)
+#walls
+	map.add_edge(lib.DIR.left, lib.LEVELS.walls, lib.LEVELS.gardener)
+	map.add_edge(lib.DIR.up, lib.LEVELS.walls, lib.LEVELS.succ_2)
+	map.add_edge(lib.DIR.down, lib.LEVELS.walls, lib.LEVELS.stake_2)
+#succ_2
+	map.add_edge(lib.DIR.down, lib.LEVELS.succ_2, lib.LEVELS.walls)
+	map.add_edge(lib.DIR.right, lib.LEVELS.succ_2, lib.LEVELS.orotto)
+	map.add_edge(lib.DIR.up, lib.LEVELS.succ_2, lib.LEVELS.dirk)
+#orotto
+	map.add_edge(lib.DIR.left, lib.LEVELS.orotto, lib.LEVELS.succ_2)
+	map.add_edge(lib.DIR.down, lib.LEVELS.orotto, lib.LEVELS.stake_3)
+#stake_3
+	map.add_edge(lib.DIR.up, lib.LEVELS.stake_3, lib.LEVELS.orotto)
+	map.add_edge(lib.DIR.right, lib.LEVELS.stake_3, lib.LEVELS.roboto)
+	map.add_edge(lib.DIR.down, lib.LEVELS.stake_3, lib.LEVELS.tree)
+#roboto
+	map.add_edge(lib.DIR.left, lib.LEVELS.roboto, lib.LEVELS.stake_3)
+	map.add_edge(lib.DIR.right, lib.LEVELS.roboto, lib.LEVELS.bot)
+
+#robots
+
+#bot
+	map.add_edge(lib.DIR.left, lib.LEVELS.bot, lib.LEVELS.roboto)
+	map.add_edge(lib.DIR.down, lib.LEVELS.bot, lib.LEVELS.borken)
+#borken
+	map.add_edge(lib.DIR.up, lib.LEVELS.borken, lib.LEVELS.bot)
+	map.add_edge(lib.DIR.down, lib.LEVELS.borken, lib.LEVELS.feel_alive)
+#feel_alive
+	map.add_edge(lib.DIR.up, lib.LEVELS.feel_alive, lib.LEVELS.borken)
+	map.add_edge(lib.DIR.down, lib.LEVELS.feel_alive, lib.LEVELS.pogchamp)
+#pogchamp
+	map.add_edge(lib.DIR.up, lib.LEVELS.pogchamp, lib.LEVELS.feel_alive)
+	map.add_edge(lib.DIR.left, lib.LEVELS.pogchamp, lib.LEVELS.cog_3)
+
+#cars
+
+#scrapmobile
+	map.add_edge(lib.DIR.right, lib.LEVELS.scrapmobile, lib.LEVELS.hub)
+	map.add_edge(lib.DIR.up, lib.LEVELS.scrapmobile, lib.LEVELS.speaker)
+#speaker
+	map.add_edge(lib.DIR.up, lib.LEVELS.speaker, lib.LEVELS.succ)
+	map.add_edge(lib.DIR.down, lib.LEVELS.speaker, lib.LEVELS.scrapmobile)
+#succ
+	map.add_edge(lib.DIR.left, lib.LEVELS.succ, lib.LEVELS.whistling_jackhammer)
+	map.add_edge(lib.DIR.down, lib.LEVELS.succ, lib.LEVELS.speaker)
+#whistling_jackhammer
+	map.add_edge(lib.DIR.up, lib.LEVELS.whistling_jackhammer, lib.LEVELS.succor)
+	map.add_edge(lib.DIR.right, lib.LEVELS.whistling_jackhammer, lib.LEVELS.succ)
+#succor
+	map.add_edge(lib.DIR.down, lib.LEVELS.succor, lib.LEVELS.whistling_jackhammer)
+	map.add_edge(lib.DIR.right, lib.LEVELS.succor, lib.LEVELS.why)
+#why
+	map.add_edge(lib.DIR.left, lib.LEVELS.why, lib.LEVELS.succor)
+	map.add_edge(lib.DIR.up, lib.LEVELS.why, lib.LEVELS.gardener)
+#gardener
+	map.add_edge(lib.DIR.down, lib.LEVELS.gardener, lib.LEVELS.why)
+	map.add_edge(lib.DIR.right, lib.LEVELS.gardener, lib.LEVELS.walls)
+
+#sinkhole
+
+#dirk
+	map.add_edge(lib.DIR.up, lib.LEVELS.dirk, lib.LEVELS.sink)
+	map.add_edge(lib.DIR.down, lib.LEVELS.dirk, lib.LEVELS.succ_2)
+#sink
+	map.add_edge(lib.DIR.down, lib.LEVELS.sink, lib.LEVELS.dirk)
+
+#construction
+
+#minecraft_construction_area
+	map.add_edge(lib.DIR.down, lib.LEVELS.minecraft_construction_area, lib.LEVELS.infinity)
+#infinity
+	map.add_edge(lib.DIR.up, lib.LEVELS.infinity, lib.LEVELS.minecraft_construction_area)
+	map.add_edge(lib.DIR.down, lib.LEVELS.infinity, lib.LEVELS.reck)
+#reck
+	map.add_edge(lib.DIR.up, lib.LEVELS.reck, lib.LEVELS.infinity)
+	map.add_edge(lib.DIR.right, lib.LEVELS.reck, lib.LEVELS.placeholder)
+	map.add_edge(lib.DIR.down, lib.LEVELS.reck, lib.LEVELS.ralph)
+#placeholder
+	map.add_edge(lib.DIR.left, lib.LEVELS.placeholder, lib.LEVELS.reck)
+	map.add_edge(lib.DIR.down, lib.LEVELS.placeholder, lib.LEVELS.garbage)
+	map.add_edge(lib.DIR.up, lib.LEVELS.placeholder, lib.LEVELS.magneto)
+#garbage
+	map.add_edge(lib.DIR.up, lib.LEVELS.garbage, lib.LEVELS.placeholder)
+#magneto
+	map.add_edge(lib.DIR.down, lib.LEVELS.magneto, lib.LEVELS.placeholder)
+	map.add_edge(lib.DIR.right, lib.LEVELS.magneto, lib.LEVELS.gemeni)
+	map.add_edge(lib.DIR.up, lib.LEVELS.magneto, lib.LEVELS.mixer)
+#mixer
+	map.add_edge(lib.DIR.down, lib.LEVELS.mixer, lib.LEVELS.magneto)
+#gemeni
+	map.add_edge(lib.DIR.left, lib.LEVELS.gemeni, lib.LEVELS.magneto)
+#ralph
+	map.add_edge(lib.DIR.up, lib.LEVELS.ralph, lib.LEVELS.reck)
+	map.add_edge(lib.DIR.left, lib.LEVELS.ralph, lib.LEVELS.welding)
+#welding
+	map.add_edge(lib.DIR.left, lib.LEVELS.welding, lib.LEVELS.byeah)
+	map.add_edge(lib.DIR.right, lib.LEVELS.welding, lib.LEVELS.reck)
+#byeah
+	map.add_edge(lib.DIR.right, lib.LEVELS.byeah, lib.LEVELS.welding)
+	map.add_edge(lib.DIR.left, lib.LEVELS.byeah, lib.LEVELS.con)
+
+#incinerator
+
+#warm
+	map.add_edge(lib.DIR.left, lib.LEVELS.warm, lib.LEVELS.backwards)
+	map.add_edge(lib.DIR.up, lib.LEVELS.warm, lib.LEVELS.conveyor)
+	map.add_edge(lib.DIR.right, lib.LEVELS.warm, lib.LEVELS.succ_3)
+#succ_3
+	map.add_edge(lib.DIR.left, lib.LEVELS.succ_3, lib.LEVELS.warm)
+	map.add_edge(lib.DIR.right, lib.LEVELS.succ_3, lib.LEVELS.incins_big_win)
+#incins_big_win
+	map.add_edge(lib.DIR.left, lib.LEVELS.incins_big_win, lib.LEVELS.succ_3)
+	map.add_edge(lib.DIR.down, lib.LEVELS.incins_big_win, lib.LEVELS.incin_1)
+#incin_1
+	map.add_edge(lib.DIR.down, lib.LEVELS.incin_1, lib.LEVELS.incin_4)
+	map.add_edge(lib.DIR.left, lib.LEVELS.incin_1, lib.LEVELS.incin_2)
+	map.add_edge(lib.DIR.up, lib.LEVELS.incin_1, lib.LEVELS.incins_big_win)
+#incin_2
+	map.add_edge(lib.DIR.down, lib.LEVELS.incin_2, lib.LEVELS.incin_3)
+	map.add_edge(lib.DIR.left, lib.LEVELS.incin_2, lib.LEVELS.papier)
+	map.add_edge(lib.DIR.right, lib.LEVELS.incin_2, lib.LEVELS.incin_1)
+#incin_3
+	map.add_edge(lib.DIR.down, lib.LEVELS.incin_3, lib.LEVELS.alternia)
+	map.add_edge(lib.DIR.up, lib.LEVELS.incin_3, lib.LEVELS.incin_2)
+#incin_4
+	map.add_edge(lib.DIR.up, lib.LEVELS.incin_4, lib.LEVELS.incin_1)
+#papier
+	map.add_edge(lib.DIR.right, lib.LEVELS.papier, lib.LEVELS.incin_2)
+#alternia
+	map.add_edge(lib.DIR.up, lib.LEVELS.alternia, lib.LEVELS.incin_3)
 	
 #room connections
 	
