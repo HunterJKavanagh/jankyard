@@ -1,6 +1,10 @@
 extends KinematicBody2D
 
+const lib = preload("res://Lib.gd")
+
 export (int) var speed = 500
+
+var selected_tool = lib.TOOLS.tool1
 
 var velocity = Vector2()
 

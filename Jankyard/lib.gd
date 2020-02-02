@@ -4,6 +4,8 @@ enum CHARACTERS{test_character, broken_robot_1, broken_robot_2, broken_robot_3, 
 
 enum OBJ{test_obj}
 
+enum TOOLS{tool1, tool2, tool3, tool4, tool5, tool6}
+
 enum LEVELS {level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8, level_9, hub, first_bridge, first_ramp, conveyor, walkie, cog_1, cog_2, cog_3, cog_4, plant, con, garbo, planto, saw, stakes, tree, stake_2, walls, succ_2, orotto, stake_3, roboto, bot, borken, feel_alive, pogchamp, scrapmobile, speaker, succ, whistling_jackhammer, succor, why, gardener, dirk, sink, minecraft_construction_area, infinity, reck, placeholder, garbage, magneto, mixer, gemeni, ralph, welding, byeah, warm, backwards, succ_3, incins_big_win, incin_1, incin_2, incin_3, incin_4, alternia, papier}
 
 const DIALOG: Dictionary = {
