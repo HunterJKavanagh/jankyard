@@ -64,6 +64,5 @@ texture = ExtResource( 1 )
 position = Vector2( -20.0476, 25.7755 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-animation = "up"
-frame = 2
+animation = "left"
 playing = true
