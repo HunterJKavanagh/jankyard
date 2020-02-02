@@ -1,5 +1,42 @@
 enum DIR{up, right, down, left}
 
+enum CHARACTERS{test_character, broken_robot_1, broken_robot_2, broken_robot_3, _3v_1l}
+
+const DATA: Dictionary = {
+	"dialog": {
+		CHARACTERS.test_character: {
+			0: ["dont click me", "go away"],
+		},
+		CHARACTERS.broken_robot_1: {
+			0: ["(sad robot noises)"],
+		},
+		CHARACTERS.broken_robot_2: {
+			0: ["(dying robot noises)"],
+		},
+		CHARACTERS.broken_robot_3: {
+			0: ["Zrrt"],
+		},
+	},
+	"dialog_counter": {
+		CHARACTERS.test_character: {
+			"line": 0,
+			"level": 0,
+		},
+		CHARACTERS.broken_robot_1: {
+			"line": 0,
+			"level": 0,
+		},
+		CHARACTERS.broken_robot_2: {
+			"line": 0,
+			"level": 0,
+		},
+		CHARACTERS.broken_robot_3: {
+			"line": 0,
+			"level": 0,
+		},
+	},
+}
+
 class Graph:
 	var vertices: Dictionary
 	

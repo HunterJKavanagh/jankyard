@@ -4,8 +4,10 @@ const lib = preload("res://lib.gd")
 
 func _ready():
 	$Map.connect("level_change", self, "on_level_change")
+	$Map.level.connect("character_clicked", $Map, "on_character_clicked")
 
 func on_level_change(dir):
+	#$Map.level.connect("character_clicked", $Map, "on_character_clicked")
 	match dir:
 		lib.DIR.up:
 			$Player.position = $Map.player_postions[lib.DIR.down]
@@ -16,9 +18,7 @@ func on_level_change(dir):
 		lib.DIR.left:
 			$Player.position = $Map.player_postions[lib.DIR.right]
 
-func _on_Character_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == BUTTON_LEFT:
-			var dis = sqrt(pow($Player.position.x - $Character.position.x, 2) + pow($Player.position.y - $Character.position.y, 2))
-			if dis <= 100:
-				$UI/P2/TextBox.text += "Don't Click Me!"
+#func on_character_clicked(character):
+#	match character:
+#		lib.CHARACHTERS.test_character:
+#			$UI/Dialog/CharacterDialogPanel/RichTextLabel.text = lib.DATA["dialog"][character][lib.DATA["dialog_counter"][character]["level"]][lib.DATA["dialog_counter"][character]["line"]]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assests/art/backgrounds/Sand beach soil ground shore desert texture ver 3.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/level/IWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/level/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/level/Level.gd" type="Script" id=4]
 [ext_resource path="res://Assests/art/wcar.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/characters/TestCharacter/TestCharacter.tscn" type="PackedScene" id=6]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
@@ -57,6 +58,9 @@ text = "(0,0)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TestCharacter" parent="." instance=ExtResource( 6 )]
+position = Vector2( 912.18, 74.6205 )
 [connection signal="body_entered" from="DoorU" to="." method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorD" to="." method="_on_DoorD_body_entered"]
 [connection signal="body_entered" from="DoorL" to="." method="_on_DoorL_body_entered"]
