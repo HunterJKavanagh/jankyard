@@ -12,6 +12,10 @@ var level_name = lib.LEVELS.hub
 var level
 var current_character
 
+var data: Dictionary = {
+	
+}
+
 var player_postions: Dictionary = {
 		lib.DIR.up: Vector2(512, 30),
 		lib.DIR.right: Vector2(994, 300),
@@ -431,7 +435,7 @@ func on_obj_clicked(obj_type, l_r, obj):
 				print("Left Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
 				if $Player.selected_tool == lib.ITEMS.wood:
 					obj.get_node("CollisionShape2D").disabled = true
-					obj.get_node()
+					obj.get_node("AnimatedSprite").play("fixed")
 					print(obj.get_node("CollisionShape2D").disabled)
 			if l_r == lib.RIGHT:
 				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)

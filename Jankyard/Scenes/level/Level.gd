@@ -6,6 +6,11 @@ signal door_entered
 
 func _ready():
 	self.set_meta("level", true)
+	var objs = get_children()
+	for o in objs:
+		if o.has_meta("obj"):
+			if o.has_node("AnimatedSprite"):
+				pass
 
 func _on_DoorU_body_entered(body):
 	emit_signal("door_entered", lib.DIR.up)
