@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assests/art/backgrounds/Sand beach soil ground shore desert texture ver 3.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/level/IWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/level/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/level/Level.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/objects/Glue.tscn" type="PackedScene" id=5]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
@@ -52,6 +53,10 @@ text = "hub"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Glue" parent="." instance=ExtResource( 5 )]
+position = Vector2( 94.9335, 108.15 )
+rotation = 0.000639462
 [connection signal="body_entered" from="DoorU" to="." method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorD" to="." method="_on_DoorD_body_entered"]
 [connection signal="body_entered" from="DoorL" to="." method="_on_DoorL_body_entered"]

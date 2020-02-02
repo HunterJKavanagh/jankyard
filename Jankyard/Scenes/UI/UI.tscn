@@ -129,21 +129,21 @@ margin_left = 753.464
 margin_top = 49.64
 margin_right = 873.464
 margin_bottom = 379.64
-rect_min_size = Vector2( 120, 330 )
+rect_min_size = Vector2( 120, 360 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="Inventory"]
 margin_right = 120.0
-margin_bottom = 330.0
+margin_bottom = 360.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel"]
+[node name="VBox" type="VBoxContainer" parent="Inventory/Panel"]
 margin_right = 120.0
 margin_bottom = 300.0
 size_flags_horizontal = 0
@@ -152,127 +152,141 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Main" type="Label" parent="Inventory/Panel/VBoxContainer"]
+[node name="Main" type="Label" parent="Inventory/Panel/VBox"]
 margin_right = 120.0
 margin_bottom = 14.0
 text = "Inventory"
 align = 1
 
-[node name="HSeparator" type="HSeparator" parent="Inventory/Panel/VBoxContainer"]
+[node name="Hands" type="Button" parent="Inventory/Panel/VBox"]
 margin_top = 18.0
 margin_right = 120.0
-margin_bottom = 22.0
+margin_bottom = 38.0
+toggle_mode = true
+text = "Hands"
 
-[node name="Tools" type="Label" parent="Inventory/Panel/VBoxContainer"]
-margin_top = 26.0
+[node name="HSeparator" type="HSeparator" parent="Inventory/Panel/VBox"]
+margin_top = 42.0
 margin_right = 120.0
-margin_bottom = 40.0
+margin_bottom = 46.0
+
+[node name="Tools" type="Label" parent="Inventory/Panel/VBox"]
+margin_top = 50.0
+margin_right = 120.0
+margin_bottom = 64.0
 text = "Tools"
 align = 1
 
-[node name="Tool1" type="Button" parent="Inventory/Panel/VBoxContainer"]
-margin_top = 44.0
-margin_right = 120.0
-margin_bottom = 64.0
-toggle_mode = true
-text = "Tool 1"
-
-[node name="Tool2" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Tool1" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 68.0
 margin_right = 120.0
 margin_bottom = 88.0
 toggle_mode = true
-text = "Tool 2"
+text = "Glue"
 
-[node name="Tool3" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Tool2" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 92.0
 margin_right = 120.0
 margin_bottom = 112.0
 toggle_mode = true
-text = "Tool 3"
+text = "Tool 2"
 
-[node name="Tool4" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Tool3" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 116.0
 margin_right = 120.0
 margin_bottom = 136.0
 toggle_mode = true
-text = "Tool 4"
+text = "Tool 3"
 
-[node name="Tool5" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Tool4" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 140.0
 margin_right = 120.0
 margin_bottom = 160.0
 toggle_mode = true
-text = "Tool 5"
+text = "Tool 4"
 
-[node name="Tool6" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Tool5" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 164.0
 margin_right = 120.0
 margin_bottom = 184.0
 toggle_mode = true
-text = "Tool 6"
+text = "Tool 5"
 
-[node name="HSeparator2" type="HSeparator" parent="Inventory/Panel/VBoxContainer"]
+[node name="Tool6" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 188.0
 margin_right = 120.0
-margin_bottom = 192.0
+margin_bottom = 208.0
+toggle_mode = true
+text = "Tool 6"
 
-[node name="Items" type="Label" parent="Inventory/Panel/VBoxContainer"]
-margin_top = 196.0
+[node name="HSeparator2" type="HSeparator" parent="Inventory/Panel/VBox"]
+margin_top = 212.0
 margin_right = 120.0
-margin_bottom = 210.0
+margin_bottom = 216.0
+
+[node name="Items" type="Label" parent="Inventory/Panel/VBox"]
+margin_top = 220.0
+margin_right = 120.0
+margin_bottom = 234.0
 text = "Items"
 align = 1
 
-[node name="Item1" type="Button" parent="Inventory/Panel/VBoxContainer"]
-margin_top = 214.0
-margin_right = 120.0
-margin_bottom = 234.0
-toggle_mode = true
-text = "Item 1"
-
-[node name="Item2" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Item1" type="Button" parent="Inventory/Panel/VBox"]
 margin_top = 238.0
 margin_right = 120.0
 margin_bottom = 258.0
 toggle_mode = true
-text = "Item 2"
+text = "Item 1"
 
-[node name="Item3" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Item2" type="Button" parent="Inventory/Panel/VBox"]
 margin_top = 262.0
 margin_right = 120.0
 margin_bottom = 282.0
 toggle_mode = true
-text = "Item 3"
+text = "Item 2"
 
-[node name="Item4" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Item3" type="Button" parent="Inventory/Panel/VBox"]
 margin_top = 286.0
 margin_right = 120.0
 margin_bottom = 306.0
 toggle_mode = true
-text = "Item 4"
+text = "Item 3"
 
-[node name="Item5" type="Button" parent="Inventory/Panel/VBoxContainer"]
+[node name="Item4" type="Button" parent="Inventory/Panel/VBox"]
 margin_top = 310.0
 margin_right = 120.0
 margin_bottom = 330.0
+toggle_mode = true
+text = "Item 4"
+
+[node name="Item5" type="Button" parent="Inventory/Panel/VBox"]
+margin_top = 334.0
+margin_right = 120.0
+margin_bottom = 354.0
 toggle_mode = true
 text = "Item 5"
 [connection signal="pressed" from="ToolBoxButton" to="." method="_on_ToolBoxButton_pressed"]
 [connection signal="pressed" from="InventoryButton" to="." method="_on_InventoryButton_pressed"]
 [connection signal="pressed" from="ToolBox/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Dialog/PlayerDialogPanel/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool1" to="." method="_on_Tool1_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool2" to="." method="_on_Tool2_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool3" to="." method="_on_Tool3_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool4" to="." method="_on_Tool4_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool5" to="." method="_on_Tool5_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Tool6" to="." method="_on_Tool6_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item1" to="." method="_on_Item1_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item2" to="." method="_on_Item2_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item3" to="." method="_on_Item3_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item4" to="." method="_on_Item4_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBoxContainer/Item5" to="." method="_on_Item5_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Hands" to="." method="_on_Hands_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Tool1" to="." method="_on_Tool1_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Tool2" to="." method="_on_Tool2_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Tool3" to="." method="_on_Tool3_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Tool4" to="." method="_on_Tool4_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Tool5" to="." method="_on_Tool5_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Tool6" to="." method="_on_Tool6_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Item1" to="." method="_on_Item1_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Item2" to="." method="_on_Item2_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Item3" to="." method="_on_Item3_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Item4" to="." method="_on_Item4_pressed"]
+[connection signal="pressed" from="Inventory/Panel/VBox/Item5" to="." method="_on_Item5_pressed"]
 
 [editable path="ToolBox"]
 

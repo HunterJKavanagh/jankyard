@@ -2,9 +2,12 @@ enum DIR{up, right, down, left}
 
 enum CHARACTERS{test_character, broken_robot_1, broken_robot_2, broken_robot_3, _3V_1L, B3_4T, F3_3L, R3_CK, _5U_CC}
 
-enum OBJ{test_obj}
+enum OBJ{test_obj, glue}
 
-enum TOOLS{tool1, tool2, tool3, tool4, tool5, tool6}
+enum TOOLS{hands, glue, tool2, tool3, tool4, tool5, tool6}
+
+const LEFT = 0
+const RIGHT = 1
 
 enum LEVELS {level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8, level_9, hub, first_bridge, first_ramp, conveyor, walkie, cog_1, cog_2, cog_3, cog_4, plant, con, garbo, planto, saw, stakes, tree, stake_2, walls, succ_2, orotto, stake_3, roboto, bot, borken, feel_alive, pogchamp, scrapmobile, speaker, succ, whistling_jackhammer, succor, why, gardener, dirk, sink, minecraft_construction_area, infinity, reck, placeholder, garbage, magneto, mixer, gemeni, ralph, welding, byeah, warm, backwards, succ_3, incins_big_win, incin_1, incin_2, incin_3, incin_4, alternia, papier}
 

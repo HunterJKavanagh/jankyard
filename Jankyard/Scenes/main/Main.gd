@@ -2,7 +2,7 @@ tool
 
 extends Node2D
 
-const lib = preload("res://Lib.gd")
+const lib = preload("res://lib.gd")
 
 signal level_change
 
@@ -405,16 +405,22 @@ func connect_obj(level):
 	var objs = level.get_children()
 	for o in objs:
 		if o.has_meta("obj"):
-			if o.get_meta("obj") == lib.OBJ.test_obj:
-				o.connect("input_event", self, "on_obj_cliked")
+			o.connect("obj_clicked", self, "on_obj_clicked")
 
-func on_obj_cliked(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == BUTTON_LEFT:
-			print("Left click with TOOL: " + $Player.selected_tool as String)
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == BUTTON_RIGHT:
-			print("Right click with TOOL: " + $Player.selected_tool as String)
+func on_obj_clicked(obj, l_r):
+	match obj:
+		lib.OBJ.test_obj:
+			if l_r == lib.LEFT:
+				print("Left Cliked: " + "Test Obj " + "With: " + $Player.selected_tool as String)
+			if l_r == lib.RIGHT:
+				print("Right Cliked: " + "Test Obj " + "With: " + $Player.selected_tool as String)
+		lib.OBJ.glue:
+			if l_r == lib.LEFT:
+				print("Left Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
+				if $Player.selected_tool == lib.TOOLS.hands:
+					$UI/UI/Inventory/Panel/VBox/Tool1.visible = true
+			if l_r == lib.RIGHT:
+				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
 
 func on_tool_button_pressed(tool_type):
 	$Player.selected_tool = tool_type
