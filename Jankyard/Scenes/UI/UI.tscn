@@ -56,7 +56,6 @@ margin_bottom = 40.0
 margin_bottom = 40.0
 
 [node name="Dialog" parent="." instance=ExtResource( 4 )]
-visible = false
 margin_left = 4.53315
 margin_top = -1.19092
 margin_right = 4.5332
@@ -158,13 +157,6 @@ margin_bottom = 14.0
 text = "Inventory"
 align = 1
 
-[node name="Hands" type="Button" parent="Inventory/Panel/VBox"]
-margin_top = 18.0
-margin_right = 120.0
-margin_bottom = 38.0
-toggle_mode = true
-text = "Hands"
-
 [node name="HSeparator" type="HSeparator" parent="Inventory/Panel/VBox"]
 margin_top = 42.0
 margin_right = 120.0
@@ -238,13 +230,15 @@ text = "Items"
 align = 1
 
 [node name="Item1" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 238.0
 margin_right = 120.0
 margin_bottom = 258.0
 toggle_mode = true
-text = "Item 1"
+text = "Wood"
 
 [node name="Item2" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 262.0
 margin_right = 120.0
 margin_bottom = 282.0
@@ -252,6 +246,7 @@ toggle_mode = true
 text = "Item 2"
 
 [node name="Item3" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 286.0
 margin_right = 120.0
 margin_bottom = 306.0
@@ -259,6 +254,7 @@ toggle_mode = true
 text = "Item 3"
 
 [node name="Item4" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 310.0
 margin_right = 120.0
 margin_bottom = 330.0
@@ -266,6 +262,7 @@ toggle_mode = true
 text = "Item 4"
 
 [node name="Item5" type="Button" parent="Inventory/Panel/VBox"]
+visible = false
 margin_top = 334.0
 margin_right = 120.0
 margin_bottom = 354.0
@@ -275,7 +272,6 @@ text = "Item 5"
 [connection signal="pressed" from="InventoryButton" to="." method="_on_InventoryButton_pressed"]
 [connection signal="pressed" from="ToolBox/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Dialog/PlayerDialogPanel/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="pressed" from="Inventory/Panel/VBox/Hands" to="." method="_on_Hands_pressed"]
 [connection signal="pressed" from="Inventory/Panel/VBox/Tool1" to="." method="_on_Tool1_pressed"]
 [connection signal="pressed" from="Inventory/Panel/VBox/Tool2" to="." method="_on_Tool2_pressed"]
 [connection signal="pressed" from="Inventory/Panel/VBox/Tool3" to="." method="_on_Tool3_pressed"]

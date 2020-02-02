@@ -2,9 +2,11 @@ enum DIR{up, right, down, left}
 
 enum CHARACTERS{test_character, broken_robot_1, broken_robot_2, broken_robot_3, _3V_1L, B3_4T, F3_3L, R3_CK, _5U_CC}
 
-enum OBJ{test_obj, glue}
+enum OBJ{test_obj, glue, wood, pit}
 
-enum TOOLS{hands, glue, tool2, tool3, tool4, tool5, tool6}
+enum ITEMS{none, glue, tool2, tool3, tool4, tool5, tool6, wood}
+
+
 
 const LEFT = 0
 const RIGHT = 1

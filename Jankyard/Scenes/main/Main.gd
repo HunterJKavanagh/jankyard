@@ -407,7 +407,7 @@ func connect_obj(level):
 		if o.has_meta("obj"):
 			o.connect("obj_clicked", self, "on_obj_clicked")
 
-func on_obj_clicked(obj, l_r):
+func on_obj_clicked(obj, l_r, data_1):
 	match obj:
 		lib.OBJ.test_obj:
 			if l_r == lib.LEFT:
@@ -417,8 +417,20 @@ func on_obj_clicked(obj, l_r):
 		lib.OBJ.glue:
 			if l_r == lib.LEFT:
 				print("Left Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
-				if $Player.selected_tool == lib.TOOLS.hands:
-					$UI/UI/Inventory/Panel/VBox/Tool1.visible = true
+				$UI/UI/Inventory/Panel/VBox/Tool1.visible = true
+			if l_r == lib.RIGHT:
+				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
+		lib.OBJ.wood:
+			if l_r == lib.LEFT:
+				print("Left Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
+				$UI/UI/Inventory/Panel/VBox/Item1.visible = true
+			if l_r == lib.RIGHT:
+				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
+		lib.OBJ.pit:
+			if l_r == lib.LEFT:
+				print("Left Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
+				if $Player.selected_tool == lib.ITEMS.wood:
+					data_1.get_node("CollisionShape2D").disabled = false
 			if l_r == lib.RIGHT:
 				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
 

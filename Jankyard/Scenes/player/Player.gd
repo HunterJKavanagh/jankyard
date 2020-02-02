@@ -4,7 +4,7 @@ const lib = preload("res://Lib.gd")
 
 export (int) var speed = 500
 
-var selected_tool = lib.TOOLS.hands
+var selected_tool = lib.ITEMS.none
 
 var velocity = Vector2()
 
