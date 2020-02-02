@@ -39,7 +39,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 3 ) ],
-"loop": false,
+"loop": true,
 "name": "down",
 "speed": 5.0
 } ]
@@ -56,10 +56,13 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 5.72803, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-animation = "down"
+animation = "up"
+playing = true
