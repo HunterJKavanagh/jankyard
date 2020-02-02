@@ -431,6 +431,7 @@ func on_obj_clicked(obj_type, l_r, obj):
 				print("Left Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
 				if $Player.selected_tool == lib.ITEMS.wood:
 					obj.get_node("CollisionShape2D").disabled = true
+					obj.get_node()
 					print(obj.get_node("CollisionShape2D").disabled)
 			if l_r == lib.RIGHT:
 				print("Right Cliked: " + "Glue " + "With: " + $Player.selected_tool as String)
