@@ -55,8 +55,10 @@ position = Vector2( 956.928, 530.997 )
 texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = -1.86621
+margin_top = 4.66541
+margin_right = 38.1338
+margin_bottom = 18.6654
 text = "(-1,0)"
 __meta__ = {
 "_edit_use_anchors_": false

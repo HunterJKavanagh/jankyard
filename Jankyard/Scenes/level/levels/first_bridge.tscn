@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/level/IWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/level/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/level/Level.gd" type="Script" id=4]
-[ext_resource path="res://Assests/art/wcar.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/objects/TestObj.tscn" type="PackedScene" id=5]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
@@ -46,10 +46,6 @@ rotation = 1.5708
 position = Vector2( 1024, 300 )
 rotation = 1.5708
 
-[node name="wcar" type="Sprite" parent="."]
-position = Vector2( 89.5113, 87.5416 )
-texture = ExtResource( 5 )
-
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
@@ -57,6 +53,9 @@ text = "first_bridge"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TestObj" parent="." instance=ExtResource( 5 )]
+position = Vector2( 59.1758, 89.1057 )
 [connection signal="body_entered" from="DoorU" to="." method="_on_DoorU_body_entered"]
 [connection signal="body_entered" from="DoorD" to="." method="_on_DoorD_body_entered"]
 [connection signal="body_entered" from="DoorL" to="." method="_on_DoorL_body_entered"]

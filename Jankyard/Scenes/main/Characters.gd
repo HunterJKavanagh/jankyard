@@ -32,16 +32,19 @@ func _on_3V_1L_input_event(viewport, event, shape_idx):
 		if event.pressed and event.button_index == BUTTON_LEFT:
 			print("click")
 			Dialog.visible = true
+			Dialog.set_mouse_filter(0) 
 			emit_signal("character_clicked", lib.CHARACTERS._3V_1L)
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_RIGHT:
 			Dialog.visible = false
+			Dialog.set_mouse_filter(2)
 
 func _on_TestCharacter_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_LEFT:
 			Dialog.visible = true
+			Dialog.set_mouse_filter(0)
 			emit_signal("character_clicked", lib.CHARACTERS.test_character)
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_RIGHT:
-			Dialog.visible = false
+			Dialog.set_mouse_filter(2)
