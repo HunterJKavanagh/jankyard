@@ -12,8 +12,21 @@ var level_name = lib.LEVELS.hub
 var level
 var current_character
 
+#enum OBJ{test_obj, glue, wood, pit}
+
 var data: Dictionary = {
-	
+	"Animat": {
+		lib.OBJ.test_obj: null,
+		lib.OBJ.glue: null,
+		lib.OBJ.wood: null,
+		lib.OBJ.pit: null,
+	},
+	"Collision": {
+		lib.OBJ.test_obj: true,
+		lib.OBJ.glue: true,
+		lib.OBJ.wood: true,
+		lib.OBJ.pit: true,
+	},
 }
 
 var player_postions: Dictionary = {

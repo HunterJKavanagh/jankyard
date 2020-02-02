@@ -6,11 +6,27 @@ signal door_entered
 
 func _ready():
 	self.set_meta("level", true)
-	var objs = get_children()
-	for o in objs:
-		if o.has_meta("obj"):
-			if o.has_node("AnimatedSprite"):
-				pass
+	
+#	var objs = get_children()
+#	for o in objs:
+#		if o.has_meta("obj"):
+#			if o.has_node("AnimatedSprite"):
+#				if $"..".data["Animat"][o.get_meta("obj")] != null:
+#					o.get_node("AnimatedSprite").animation = $"..".data["Animat"][o.get_meta("obj")]
+#			if o.has_node("CollisionShape2D"):
+#				o.get_node("CollisionShape2D").disabled = $"..".data["Collision"][o.get_meta("obj")]
+
+func _enter_tree():
+	pass
+
+#func _exit_tree():
+#	var objs = get_children()
+#	for o in objs:
+#		if o.has_meta("obj"):
+#			if o.has_node("AnimatedSprite"):
+#				$"..".data["Animat"][o.get_meta("obj")] = o.get_node("AnimatedSprite").animation
+#			if o.has_node("CollisionShape2D"):
+#				$"..".data["Collision"][o.get_meta("obj")] = o.get_node("CollisionShape2D").disabled
 
 func _on_DoorU_body_entered(body):
 	emit_signal("door_entered", lib.DIR.up)
