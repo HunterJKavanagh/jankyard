@@ -1,6 +1,6 @@
 enum DIR{up, right, down, left}
 
-enum CHARACTERS{test_character, broken_robot_1, broken_robot_2, broken_robot_3, _3V_1L, B3_4T, F3_3L, R3_CK}
+enum CHARACTERS{test_character, broken_robot_1, broken_robot_2, broken_robot_3, _3V_1L, B3_4T, F3_3L, R3_CK, _5U_CC}
 
 enum OBJ{test_obj}
 
