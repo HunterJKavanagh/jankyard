@@ -85,7 +85,7 @@ __meta__ = {
 
 [node name="Continue" type="Button" parent="PlayerDialogPanel/VBoxContainer"]
 margin_top = 18.0
-margin_right = 190.0
+margin_right = 189.0
 margin_bottom = 38.0
 text = "Continue"
 __meta__ = {
@@ -94,12 +94,12 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerDialogPanel/VBoxContainer"]
 margin_top = 42.0
-margin_right = 190.0
+margin_right = 189.0
 margin_bottom = 62.0
 alignment = 1
 
 [node name="Yes" type="Button" parent="PlayerDialogPanel/VBoxContainer/HBoxContainer"]
-margin_right = 93.0
+margin_right = 92.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Yes"
@@ -108,8 +108,8 @@ __meta__ = {
 }
 
 [node name="No" type="Button" parent="PlayerDialogPanel/VBoxContainer/HBoxContainer"]
-margin_left = 97.0
-margin_right = 190.0
+margin_left = 96.0
+margin_right = 189.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "No"

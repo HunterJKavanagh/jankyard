@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assests/art/backgrounds/Sand beach soil ground shore desert texture ver 3.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/level/IWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/level/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/level/Level.gd" type="Script" id=4]
+[ext_resource path="res://Assests/art/wcar.png" type="Texture" id=5]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Floor" type="Sprite" parent="."]
+position = Vector2( -33, 15 )
+scale = Vector2( 0.852996, 0.952738 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="IWallL" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 300 )
+scale = Vector2( 0.1, 25.6 )
+
+[node name="IWallR" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1024, 300 )
+scale = Vector2( 0.1, 25.6 )
+
+[node name="IWallU" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 0 )
+rotation = 1.5708
+scale = Vector2( 0.1, 43.75 )
+
+[node name="IWallD" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 600 )
+rotation = 1.5708
+scale = Vector2( 0.1, 43.75 )
+
+[node name="DoorU" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 0 )
+
+[node name="DoorD" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 600 )
+
+[node name="DoorL" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 300 )
+rotation = 1.5708
+
+[node name="DoorR" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1024, 300 )
+rotation = 1.5708
+
+[node name="wcar" type="Sprite" parent="."]
+position = Vector2( 89.5113, 87.5416 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 35.0
+margin_right = 48.0
+margin_bottom = 49.0
+text = "ralph"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="DoorU" to="." method="_on_DoorU_body_entered"]
+[connection signal="body_entered" from="DoorD" to="." method="_on_DoorD_body_entered"]
+[connection signal="body_entered" from="DoorL" to="." method="_on_DoorL_body_entered"]
+[connection signal="body_entered" from="DoorR" to="." method="_on_DoorR_body_entered"]
