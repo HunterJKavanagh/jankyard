@@ -43,7 +43,6 @@ script = ExtResource( 6 )
 position = Vector2( -279.178, 189.85 )
 
 [node name="3V-1L" parent="Characters" instance=ExtResource( 3 )]
-visible = false
 position = Vector2( -261.168, 402.674 )
 
 [node name="F3-3L" parent="Characters" instance=ExtResource( 7 )]
